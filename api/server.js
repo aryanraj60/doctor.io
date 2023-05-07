@@ -21,6 +21,10 @@ app.use(morgan("dev"));
 
 //apis Routes
 
+app.get("/api/v1/test", (req, res) => {
+  res.status(200).send({ message: "Everything is good!" });
+});
+
 app.use("/api/v1/users", userRouter);
 
 app.use("/api/v1/admin", adminRouter);
