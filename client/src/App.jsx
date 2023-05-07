@@ -26,6 +26,7 @@ function App() {
     return <Spinner />;
   }
 
+  console.log("Env", import.meta.env.VITE_API_BASE_URL);
   return (
     <div>
       <ToastContainer />
