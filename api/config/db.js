@@ -1,9 +1,10 @@
-import mongoose from "mongoose";
+import { MongoClient } from "mongodb";
 
 const connectDB = () => {
   const url = process.env.MONGODB_URL;
-  mongoose
-    .connect(url)
+  const client = new MongoClient(url);
+  client
+    .connect()
     .then(() => {
       console.log("Connected to Mongo DB");
     })
