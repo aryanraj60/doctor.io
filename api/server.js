@@ -6,6 +6,7 @@ import connectDB from "./config/db.js";
 import { userRouter } from "./routes/userRoutes.js";
 import { adminRouter } from "./routes/adminRoutes.js";
 import { doctorRouter } from "./routes/doctorRoutes.js";
+import cors from "cors";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ const app = express();
 //middleware
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(cors());
 
 //MongoDB Connection
 
