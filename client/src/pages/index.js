@@ -10,3 +10,4 @@ export { default as DocProfile } from "./doctor/DocProfile";
 export { default as Appointments } from "./Appointments";
 export { default as DocAppointment } from "./doctor/DocAppointment";
 export { default as UserProfile } from "./UserProfile";
+export { default as LandingPage } from "./LandingPage";

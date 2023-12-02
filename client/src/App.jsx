@@ -13,6 +13,7 @@ import {
   Appointments,
   DocAppointment,
   UserProfile,
+  LandingPage,
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import Spinner from "./components/Spinner";
@@ -29,19 +30,27 @@ function App() {
     return <Spinner />;
   }
 
-  console.log("Env", import.meta.env.VITE_API_BASE_URL);
   return (
     <div>
       <ToastContainer />
       <Routes>
         <Route
-          path="/"
+          path="/dashboard"
           element={
             <ProtectedRoute>
               <HomePage />
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/"
+          element={
+            <PublicRoute>
+              <LandingPage />
+            </PublicRoute>
+          }
+        />
+
         <Route
           path="/login"
           element={
@@ -50,6 +59,7 @@ function App() {
             </PublicRoute>
           }
         />
+
         <Route
           path="/register"
           element={
