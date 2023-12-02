@@ -170,12 +170,10 @@ const bookDoctorAppointmentController = async (req, res) => {
 
     const userDetail = await userModel.findOne({ _id: userId });
     if (userDetail.isDoctor) {
-      return res
-        .status(200)
-        .send({
-          message: "Sorry! Doctor can not book appointments.",
-          success: false,
-        });
+      return res.status(200).send({
+        message: "Sorry! Doctor can not book appointments.",
+        success: false,
+      });
     }
     const userAppointment = await appointmentModel.findOne({
       userId,
