@@ -18,6 +18,9 @@ import { ToastContainer } from "react-toastify";
 import Spinner from "./components/Spinner";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PublicRoute from "./components/PublicRoute";
+import axios from "axios";
+
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
 
 function App() {
   const { loading } = useSelector((state) => state.loading);
